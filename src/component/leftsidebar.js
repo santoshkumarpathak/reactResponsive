@@ -1,6 +1,6 @@
 
 
-import { Container, List, Typography } from "@material-ui/core"
+import { alpha, colors, Container, List, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core"
 import { Bookmark, Camera, ExitToApp, Home, LinearScaleTwoTone, Person, PlayCircleOutline, Settings, TabletMac } from "@material-ui/icons"
 
@@ -13,24 +13,40 @@ const style = makeStyles((theme) => ({
         backgroundColor: "lightgreen",
         [theme.breakpoints.up('sm')]: {
             marginBottom: theme.spacing(3),
-            backgroundColor: "white"
+            backgroundColor: "white",
+
         },
-        border: "solid 1px gray"
+        border: "solid 1px gray",
+        cursor: "pointer",
+
     },
     icon: {
         marginRight: theme.spacing(2),
+       
         [theme.breakpoints.up('sm')]: {
-            fontSize: "18px"
+            fontSize: "18px",
+
         }
     },
     item: {
         display: "flex",
-        fontWeight:"500",
+        fontWeight: "500",
         marginBottom: theme.spacing(3),
         [theme.breakpoints.up('sm')]: {
             marginBottom: theme.spacing(3),
+        },
+        '&:hover': {
 
-        }
+            // backgroundColor: alpha(theme.palette.common.fontWeight(20), 0.25),
+            fontWeight: "1000",
+            fontSize: "500",
+            backgroundColor: "#f5f4f2",
+            justifyContent:"center",
+            radius:"10px"
+
+        },
+        // backgroundColor: alpha(theme.palette.common.white, 0.15),
+
     },
     text: {
         [theme.breakpoints.down('sm')]: {
@@ -52,10 +68,7 @@ const Leftsidebar = () => {
                     <Person className={classes.icon} />
                     <Typography className={classes.text}> Friend </Typography>
                 </div>
-                <div className={classes.item}>
-                    <List className={classes.icon} />
-                    <Typography className={classes.text}> List </Typography>
-                </div>
+
                 <div className={classes.item}>
                     <Camera className={classes.icon} />
                     <Typography className={classes.text}> camera </Typography>
