@@ -1,24 +1,21 @@
-import { Container } from "@material-ui/core"
-
+import { Container, ThemeProvider } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core"
 
 const style = makeStyles((theme) =>({
-
-    container: {
+    container:{
         padding: theme.spacing(10)
     }
 }))
-const Maincontent = () =>{
+const Rightbar = () =>{
 const classes = style()
-
     return (
         <>
-        <Container className={ classes.container}>
-        Maincontent
+        <Container className={classes.container}>
+        Rightbar
         </Container>
         
         </>
     )
 }
 
-export default Maincontent
+export default Rightbar

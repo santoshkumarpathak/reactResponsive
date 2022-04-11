@@ -64,7 +64,7 @@ const Navbar = () => {
     const classes = style({ open });
     return (
         <>
-            <AppBar>
+            <AppBar position='fixed'>
                 <Toolbar className={classes.toolbar}>
                     {/* There is already an h1 in the page, let's not duplicate it. */}
                     <Typography variant="h6" className={classes.largLogo} >
