@@ -45,7 +45,7 @@ const style = makeStyles((theme) => ({
             radius:"10px"
 
         },
-        // backgroundColor: alpha(theme.palette.common.white, 0.15),
+        
 
     },
     text: {

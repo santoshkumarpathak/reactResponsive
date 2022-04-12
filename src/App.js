@@ -1,8 +1,8 @@
 
 import Navbar from './component/Navbar'
-import Leftsidebar from './component/Leftsidebar'
-import Maincontent from './component/Maincontent'
-import Rightbar from './component/Rightbar'
+import Leftsidebar from './component/leftsidebar.js'
+import Maincontent from './component/maincontent.js'
+import Rightbar from './component/Rightbar.js'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 const style = makeStyles((theme) => ({
@@ -18,7 +18,6 @@ const style = makeStyles((theme) => ({
             display: "none"
         }
     }
-
 }))
 
 const App = () => {
