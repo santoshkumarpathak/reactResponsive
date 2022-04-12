@@ -1,5 +1,5 @@
 import { AppBar, InputBase, makeStyles, Toolbar, Typography, alpha, Badge, Avatar } from '@material-ui/core'
-import { Mail, Notifications, Search } from '@material-ui/icons';
+import { Cancel, Mail, Notifications, Search } from '@material-ui/icons';
 import { useState } from 'react';
 
 const style = makeStyles((theme) => ({
@@ -29,7 +29,13 @@ const style = makeStyles((theme) => ({
         },
         borderRadius: theme.shape.borderRadius, width: "50%",
         [theme.breakpoints.down('sm')]: {
-            display: (props) => (props.open ? 'flex' : 'none') 
+            display: (props) => (props.open ? 'flex' : 'none'),
+            width: "70%"
+        }
+    },
+    Cancel: {
+        [theme.breakpoints.up('sm')]: {
+            display: "none"
         }
     },
     searchInput: {
@@ -37,18 +43,14 @@ const style = makeStyles((theme) => ({
         marginLeft: theme.spacing(1)
     },
     searchButton: {
-         marginRight:theme.spacing(2),
-         [theme.breakpoints.up('sm')]: {
-            display: 'none' 
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+            display: 'none'
         }
     },
     icon: {
-       
         alignItems: "center",
-      
-            display: (props) => (props.open ? 'none' : 'flex') 
-       
-        
+        display: (props) => (props.open ? 'none' : 'flex')
     },
     badge: {
         marginRight: theme.spacing(2)
@@ -57,12 +59,12 @@ const style = makeStyles((theme) => ({
 }))
 
 const Navbar = () => {
-    
-    const [open, setOpen]=useState(false) 
-    const classes = style({open});       
+
+    const [open, setOpen] = useState(false)
+    const classes = style({ open });
     return (
         <>
-            <AppBar>
+            <AppBar position='fixed'>
                 <Toolbar className={classes.toolbar}>
                     {/* There is already an h1 in the page, let's not duplicate it. */}
                     <Typography variant="h6" className={classes.largLogo} >
@@ -75,9 +77,10 @@ const Navbar = () => {
 
                         <Search />
                         <InputBase placeholder="Search..." className={classes.searchInput} />
+                        <Cancel className={classes.Cancel} onClick ={() => setOpen(false)} />
                     </div>
                     <div className={classes.icon}>
-                        <Search className={classes.searchButton} onClick={() => setOpen(true)}/>
+                        <Search className={classes.searchButton} onClick={() => setOpen(true)} />
                         <Badge badgeContent={4} color="secondary" className={classes.badge} >
                             <Mail />
                         </Badge>
