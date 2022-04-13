@@ -1,22 +1,21 @@
-// import { Container } from "@material-ui/core"
+
 import {
     Avatar, Card, CardActions,
     CardContent, CardHeader, CardMedia,
-
     Collapse, Container, Grid, IconButton,
     ThemeProvider, Typography
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core"
 import image from '../static/img.jpg';
 const style = makeStyles((theme) => ({
-
-    container: {
+import { makeStyles } from "@material-ui/core"
+const style = makeStyles((theme) =>({
+   container: {
         padding: theme.spacing(10)
     }
 }))
 const Maincontent = () => {
     const classes = style()
-
     return (
         <>
             <Container className={classes.container}>
@@ -57,7 +56,6 @@ const Maincontent = () => {
                             <IconButton aria-label="share">
                                 {/* <ShareIcon /> */}
                             </IconButton>
-
                         </CardActions>
                         <Collapse timeout="auto" unmountOnExit>
                             <CardContent>
@@ -66,8 +64,6 @@ const Maincontent = () => {
                                     Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
                                     aside for 10 minutes.
                                 </Typography>
-
-
                                 <Typography>
                                     Set aside off of the heat to let rest for 10 minutes, and then serve.
                                 </Typography>
@@ -75,9 +71,7 @@ const Maincontent = () => {
                         </Collapse>
                     </Card>
                 </Grid>
-
             </Container>
-
         </>
     )
 }

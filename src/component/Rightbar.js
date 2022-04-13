@@ -116,7 +116,6 @@ const Rightbar = () => {
                         <CardMedia
                             component="img"
                             height="194"
-                            
                             image={image}
                             alt="Paella dish"
                         />
