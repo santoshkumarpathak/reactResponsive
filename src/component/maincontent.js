@@ -40,7 +40,7 @@ const Maincontent = () => {
                         <CardMedia
                             component="img"
                             height="194"
-                            image={image}
+                            // image={image}
                             alt="Paella dish"
                         />
                         <CardContent>
