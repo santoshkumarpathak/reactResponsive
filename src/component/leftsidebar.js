@@ -2,8 +2,9 @@
 
 import { alpha, colors, Container, List, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core"
-import { Bookmark, Camera, ExitToApp, Home, LinearScaleTwoTone, Person, PlayCircleOutline, Settings, TabletMac } from "@material-ui/icons"
-
+import { Link } from "react-router-dom"
+// import { Bookmark, Camera, ExitToApp, Home, LinearScaleTwoTone, Person, PlayCircleOutline, Settings, TabletMac } from "@material-ui/icons"
+import { SidebarData } from './SidebarData'
 const style = makeStyles((theme) => ({
 
     container: {
@@ -22,14 +23,14 @@ const style = makeStyles((theme) => ({
     },
     icon: {
         marginRight: theme.spacing(2),
-       
-        [theme.breakpoints.up('sm')]: {
-            fontSize: "18px",
 
+        [theme.breakpoints.down('sm')]: {
+            margin: theme.spacing(1),
         }
     },
     item: {
         display: "flex",
+        flexDirection: "column",
         fontWeight: "500",
         marginBottom: theme.spacing(3),
         [theme.breakpoints.up('sm')]: {
@@ -37,22 +38,30 @@ const style = makeStyles((theme) => ({
         },
         '&:hover': {
 
-            // backgroundColor: alpha(theme.palette.common.fontWeight(20), 0.25),
-            fontWeight: "1000",
-            fontSize: "500",
-            backgroundColor: "#f5f4f2",
-            justifyContent:"center",
-            radius:"10px"
+            // // backgroundColor: alpha(theme.palette.common.fontWeight(20), 0.25),
+            // fontWeight: "1000",
+            // fontSize: "500",
+            // backgroundColor: "#f5f4f2",
+            // justifyContent:"center",
+            // radius:"10px"
 
         },
-        
+
 
     },
     text: {
         [theme.breakpoints.down('sm')]: {
             display: "none",
         }
+    },
+    link: {
+        textDecoration: 'none',
+        marginBottom: theme.spacing(1),
+        [theme.breakpoints.down('sm')]: {
+            margin: theme.spacing(1),
+        }
     }
+
 }))
 const Leftsidebar = () => {
     const classes = style()
@@ -61,10 +70,21 @@ const Leftsidebar = () => {
         <>
             <Container className={classes.container}>
                 <div className={classes.item}>
-                    <Home className={classes.icon} />
-                    <Typography className={classes.text}> Home </Typography>
+                    {
+                        SidebarData.map((ele, index) => {
+                            return (
+
+                                <Link to={ele.path} className={classes.link} >
+                                    <span className={classes.icon}>{ele.icon}</span>&nbsp;
+                                    <span className={classes.text}>{ele.title}</span>
+                                </Link>
+
+                            )
+                        })
+                    }
+
                 </div>
-                <div className={classes.item}>
+                {/* <div className={classes.item}>
                     <Person className={classes.icon} />
                     <Typography className={classes.text}> Friend </Typography>
                 </div>
@@ -93,7 +113,7 @@ const Leftsidebar = () => {
                 <div className={classes.item}>
                     <ExitToApp className={classes.icon} />
                     <Typography className={classes.text}>Log-out </Typography>
-                </div>
+                </div> */}
 
 
 

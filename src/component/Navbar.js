@@ -1,5 +1,8 @@
-import { AppBar, InputBase, makeStyles, Toolbar, Typography, alpha, Badge, Avatar } from '@material-ui/core'
-import { Cancel, Mail, Notifications, Search } from '@material-ui/icons';
+import { AppBar, InputBase, makeStyles, Toolbar, 
+    Typography, alpha, Badge, Avatar }
+     from '@material-ui/core'
+import { Cancel, Mail, 
+    Notifications, Search } from '@material-ui/icons';
 import { useState } from 'react';
 
 const style = makeStyles((theme) => ({
@@ -28,7 +31,9 @@ const style = makeStyles((theme) => ({
             backgroundColor: alpha(theme.palette.common.white, 0.25),
         },
         borderRadius: theme.shape.borderRadius, width: "50%",
+       
         [theme.breakpoints.down('sm')]: {
+
             display: (props) => (props.open ? 'flex' : 'none'),
             width: "70%"
         }
